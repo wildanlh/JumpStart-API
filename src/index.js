@@ -2,6 +2,6 @@ import express from "express";
 
 const app = express();
 
-app.listen(3000, () => {
-  console.info("Server started on port 3000");
+app.listen(8080, () => {
+  console.info("Server started on port 8080");
 });
