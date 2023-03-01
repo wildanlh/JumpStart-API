@@ -1,0 +1,15 @@
+{
+  "name": "e-warehouse-backend",
+  "version": "1.0.0",
+  "description": "E-Warehouse",
+  "main": "./src/index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Wildan Luqmanul Hakim",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
