@@ -1,4 +1,2 @@
-/node_modules
-.idea
-coverage
-*.log
+node_modules
+.env

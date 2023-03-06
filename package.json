@@ -1,7 +1,7 @@
 {
-  "name": "e-warehouse-backend",
+  "name": "jumpstart-api",
   "version": "1.0.0",
-  "description": "E-Warehouse",
+  "description": "JumpStart Backend API",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -11,10 +11,11 @@
   "author": "Wildan Luqmanul Hakim",
   "license": "ISC",
   "dependencies": {
-    "bcryptjs": "^2.4.3",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "mongoose": "^7.0.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.20"
+    "dotenv": "^16.0.3",
+    "nodemon": "^2.0.21"
   }
 }
