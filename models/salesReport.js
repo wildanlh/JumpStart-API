@@ -1,6 +1,11 @@
 const mongoose = require("mongoose");
 
 const salesReportSchema = new mongoose.Schema({
+  date: {
+    type: Date,
+    required: true,
+    default: Date.now,
+  },
   productCode: {
     type: String,
     required: true,
