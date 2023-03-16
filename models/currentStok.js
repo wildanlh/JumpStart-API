@@ -21,7 +21,7 @@ const currentStockSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
-  revenue: {
+  fullName: {
     type: Number,
     required: true,
   },

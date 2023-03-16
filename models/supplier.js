@@ -24,11 +24,6 @@ const supplierSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
-  date: {
-    type: Date,
-    required: true,
-    default: Date.now,
-  },
 });
 
 module.exports = mongoose.model("Supplier", supplierSchema);

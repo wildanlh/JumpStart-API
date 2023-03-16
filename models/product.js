@@ -27,11 +27,6 @@ const productSchema = new mongoose.Schema({
   image: {
     type: String,
   },
-  date: {
-    type: Date,
-    required: true,
-    default: Date.now,
-  },
 });
 
 module.exports = mongoose.model("Product", productSchema);
