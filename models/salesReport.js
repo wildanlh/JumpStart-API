@@ -7,16 +7,16 @@ const salesReportSchema = new mongoose.Schema({
     default: Date.now,
   },
   productCode: {
-    type: String,
-    required: true,
+    type: Schema.Types.ObjectId,
+    ref: "Product",
   },
   productName: {
-    type: String,
-    required: true,
+    type: Schema.Types.ObjectId,
+    ref: "Product",
   },
   quantity: {
-    type: Number,
-    required: true,
+    type: Schema.Types.ObjectId,
+    ref: "Product",
   },
 });
 

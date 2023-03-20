@@ -6,28 +6,28 @@ const currentStockSchema = new mongoose.Schema({
     required: true,
   },
   productCode: {
-    type: String,
-    required: true,
+    type: Schema.Types.ObjectId,
+    ref: "Product",
   },
   productName: {
-    type: String,
-    required: true,
+    type: Schema.Types.ObjectId,
+    ref: "Product",
   },
   quantity: {
-    type: Number,
-    required: true,
+    type: Schema.Types.ObjectId,
+    ref: "Product",
   },
   revenue: {
-    type: Number,
-    required: true,
+    type: Schema.Types.ObjectId,
+    ref: "Product",
   },
   fullName: {
-    type: Number,
-    required: true,
+    type: Schema.Types.ObjectId,
+    ref: "Supplier",
   },
   soldBy: {
-    type: String,
-    required: true,
+    type: Schema.Types.ObjectId,
+    ref: "Costumer",
   },
 });
 
