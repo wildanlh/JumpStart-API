@@ -1,13 +1,23 @@
 const express = require("express");
-const mongoose = require("mongoose");
-require("dotenv").config();
+const cors = require("cors");
+const connectDB = require("./db/connect");
+const config = require("./config/config");
+const authRouter = require("./routes/authRoutes");
+const supplierRouter = require("./routes/supplierRoutes");
+const costumerRouter = require("./routes/costumerRoutes");
 
 const app = express();
 
-mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true });
+app.use(cors());
+app.use(express.json());
+app.use("/api/auth", authRouter);
+app.use("/api/suppliers", supplierRouter);
+app.use("/api/costumers", costumerRouter);
 
-const db = mongoose.connection;
-db.on("error", (error) => console.error(error));
-db.once("open", () => console.log("Connected to Database"));
+// Connect to MongoDB
+connectDB();
 
-app.listen(4000, () => console.log("Server Started"));
+// Server Port
+app.listen(config.port, () =>
+  console.log(`Server listening on port ${config.port}`)
+);
