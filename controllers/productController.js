@@ -14,8 +14,8 @@ const addProduct = async (req, res) => {
 // Get all Products
 const getAllProduct = async (req, res) => {
   try {
-    const Products = await Product.find();
-    res.send(Products);
+    const products = await Product.find();
+    res.send(products);
   } catch (error) {
     res.status(500).send(error);
   }
@@ -24,11 +24,11 @@ const getAllProduct = async (req, res) => {
 // Get a Product by id
 const getByIdProduct = async (req, res) => {
   try {
-    const Product = await Product.findById(req.params.id);
-    if (!Product) {
+    const product = await Product.findById(req.params.id);
+    if (!product) {
       return res.status(404).send();
     }
-    res.send(Product);
+    res.send(product);
   } catch (error) {
     res.status(500).send(error);
   }
@@ -38,12 +38,14 @@ const getByIdProduct = async (req, res) => {
 const updateProduct = async (req, res) => {
   const updates = Object.keys(req.body);
   const allowedUpdates = [
-    "ProductCode",
-    "firstName",
-    "lastName",
-    "phone",
-    "debit",
-    "credit",
+    "supplier",
+    "productCode",
+    "productName",
+    "quantity",
+    "costPrice",
+    "sellingPrice",
+    "brand",
+    "image",
   ];
   const isValidOperation = updates.every((update) =>
     allowedUpdates.includes(update)
@@ -54,16 +56,16 @@ const updateProduct = async (req, res) => {
   }
 
   try {
-    const Product = await Product.findByIdAndUpdate(req.params.id, req.body, {
+    const product = await Product.findByIdAndUpdate(req.params.id, req.body, {
       new: true,
       runValidators: true,
     });
 
-    if (!Product) {
+    if (!product) {
       return res.status(404).send();
     }
 
-    res.send(Product);
+    res.send(product);
   } catch (error) {
     res.status(400).send(error);
   }
@@ -72,11 +74,11 @@ const updateProduct = async (req, res) => {
 // Delete a Product by id
 const deleteProduct = async (req, res) => {
   try {
-    const Product = await Product.findByIdAndDelete(req.params.id);
-    if (!Product) {
+    const product = await Product.findByIdAndDelete(req.params.id);
+    if (!product) {
       return res.status(404).send();
     }
-    res.send(Product);
+    res.send(product);
   } catch (error) {
     res.status(500).send(error);
   }
